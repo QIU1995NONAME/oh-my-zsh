@@ -23,6 +23,9 @@ precmd(){
   PROMPT+="%{$fg_bold[yellow]%}["
   PROMPT+="%(?:%{$reset_color%}:%{$fg_no_bold[magenta]%})%?"
   PROMPT+="%{$fg_bold[yellow]%}]"
+  if [[ -n "$CONDA_PROMPT_MODIFIER" ]]; then
+    PROMPT+="%{$reset_color$fg[yellow]%} Conda$CONDA_PROMPT_MODIFIER"
+  fi
   PROMPT+="%{$fg_bold[cyan]%}> %{$reset_color%}"
 }
 
